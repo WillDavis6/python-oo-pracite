@@ -15,3 +15,12 @@ class WordFinder:
     
     def random(self):
         return random.choice(self.words)
+
+class SpecialWordFinder(WordFinder):
+    
+    def parse(self, word_path):
+
+        return [w.strip() for w in word_path
+                if w.strip() and not w.startswith("#")]
+
+    
